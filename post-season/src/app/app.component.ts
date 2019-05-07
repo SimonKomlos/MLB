@@ -1,10 +1,26 @@
-import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs/Observable';
+import {Component, OnInit, ViewChild} from '@angular/core';
+import {MatSort, MatPaginator, MatTableDataSource} from '@angular/material';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'app';
+export class AppComponent implements OnInit {
+
+
+  constructor(private http: HttpClient) {}
+
+  ngOnInit() {
+    this.getJSON().subscribe(data => {
+        console.log(data.copyright)
+    });
+  }
+
+  getJSON(): Observable<any> {
+      return this.http.get("http://statsapi.mlb.com/api/v1/schedule/postseason/series?sportId=1&season=2018&hydrate=team,broadcasts%28all%29,seriesStatus%28useOverride=true%29,decisions,person,probablePitcher,linescore%28matchup%29");
+  }
+
 }

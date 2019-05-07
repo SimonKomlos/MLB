@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import {
@@ -47,6 +48,7 @@ import {
     AppComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     MatAutocompleteModule,
     MatBadgeModule,
@@ -85,7 +87,7 @@ import {
     MatTreeModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [HttpClientModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
