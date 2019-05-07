@@ -10,13 +10,21 @@ import {MatSort, MatPaginator, MatTableDataSource} from '@angular/material';
 })
 export class AppComponent implements OnInit {
 
+  listOfGames:any=[];
+  hasDataLoaded:boolean=false;
 
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
     this.getJSON().subscribe(data => {
-        console.log(data.copyright)
+        this.hasDataLoaded = true;
+        for(let serie of data.series) {
+          for(let game of serie.games) {
+            this.listOfGames.push(game)
+          }
+        }
     });
+    console.log(this.listOfGames)
   }
 
   getJSON(): Observable<any> {
