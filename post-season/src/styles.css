@@ -20,3 +20,78 @@ body {
   margin-right: 8px;
   vertical-align: text-top;
 }
+
+mat-spinner {
+  margin: 48px auto;
+}
+
+
+.table-icon {
+  width: 12px;
+  margin-right: 4px;
+}
+
+table {
+  width: 100%;
+}
+
+.mat-sort-header-button {
+    font-weight: bold !important;
+}
+
+.mat-row {
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.mat-row:hover {
+  background-color: rgba(34,34,34,0.05);
+}
+
+
+.searchField {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  padding: 8px 16px;
+  margin-left: 48px;
+  width: 100%;
+}
+
+.searchField>input {
+  background: transparent;
+  outline: none;
+  border: 0;
+  color: #fff;
+  font-size: 18px;
+  margin-left: 16px;
+  width: 100%;
+}
+
+.searchField>input::placeholder {
+  color: #fff;
+}
+
+.searchField>mat-icon {
+  vertical-align: sub;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.score {
+  font-weight: bold;
+  margin-left: 4px;
+  display: inline-block;
+  border-radius: 3px;
+  color: #fff;
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  text-align: center;
+  background: #ff6a5f;
+}
+
+.score.winner {
+  background: #4CAF50 !important;
+}
