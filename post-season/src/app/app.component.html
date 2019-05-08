@@ -1,4 +1,5 @@
 <mat-toolbar color="primary">
+  <!-- Div produces small error within Angular since it's expecting a angular specific tag -->
   <div class="mat-elevation-z6">
     <mat-toolbar-row class="setMaxWidth">
       <span>Major League Baseball</span>
@@ -10,13 +11,13 @@
   </div>
   <mat-toolbar-row class="subheader setMaxWidth">
     <span>
-      <img src="./assets/imgs/fire.svg" />
-      <span>Post Season Schedule</span>
+      <span>⚾ Post Season Schedule</span>
     </span>
   </mat-toolbar-row>
 </mat-toolbar>
-<mat-spinner *ngIf="!hasDataLoaded" mode="indeterminate"></mat-spinner>
 
+<!-- Spinner while data is being loaded -->
+<mat-spinner *ngIf="!hasDataLoaded" mode="indeterminate"></mat-spinner>
 
 <div [hidden]="!hasDataLoaded" class="setMaxWidth">
   <table  mat-table [dataSource]="dataSource" matSort class=""
